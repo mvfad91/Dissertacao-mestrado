@@ -1,0 +1,9 @@
+\title{Coloque aqui o Título da sua dissertação}
+
+\author{Sobrenome do Aluno}{Primeiro Nome e}
+\advisor[Prof.~Dr.~]{Sobrenome}{Nome}
+\coadvisor[Profa. Dra.]{Sobrenome}{Nome}
+\banca{Profa. Dr. Fulano de Tal}{Prof. Dr. Beltrano}{Prof. Dr. Ciclano}
+\date
+
+\maketitle

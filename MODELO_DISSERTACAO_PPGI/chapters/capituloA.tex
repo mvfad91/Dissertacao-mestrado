@@ -1,0 +1,80 @@
+\chapter{Referencial Teórico}
+
+Este capítulo trata da fundamentação teórica da dissertação. Ele está dividido em seis seções: a seção 2.1 introduz os conceitos fundamentais sobre Teste de Software; a seção 2.2 descreve os princípios das Regras de Negócio em desenvolvimento de Software; a seção 2.3 apresenta aspectos sobre a linguagem OCL, utilizada para descrever restrições sobre modelos UML; a seção 2.4 apresenta conceitos a respeito da Arquitetura Orientada a Modelos; a seção 2.5 enfatiza o plugin para transformação entre modelos ATL e por fim a seção 2.6 apresenta os trabalhos relacionados a esta pesquisa.
+
+\section{Teste de Software}
+
+
+Um teste de software consiste na execução de programas onde se tem um valor de entrada, e este por sua vez resultará em uma determinada saída, que será avaliada em função dos resultados esperados (SILVA-DE-SOUZA, 2012). O teste de software tem por objetivo garantir qualidade tanto do produto final quanto de seu desenvolvimento (SILVA-DE-SOUZA, 2012). Segundo Delamaro, Maldonado e Jino (2007) essa garantia de qualidade é conseguida através de processos de Verificação e Validação do Software. Enquanto a primeira tem por objetivo avaliar o software quanto a sua especificação documentada, a segunda objetiva avalia-lo tendo como partida o ponto de vista e necessidades do usuário.
+
+
+Segundo Silva-de-Souza (2012), o processo de verificação é composto por dois tipos de classificações distintas, sendo uma estática e outra dinâmica. Enquanto que verificações estáticas avaliam aspectos documentais do software, verificações dinâmicas atuam sobre o software em tempo de execução. Para Sousa (2009) é fundamental que sejam mantidos testes durante todo o ciclo de vida do software, pois é dessa maneira que falhas e imprevistos são encontrados, aumentando a confiabilidade e qualidade do produto, minimizando eventuais riscos ao qual todo projeto está inerente.
+
+
+O processo de teste pode ser dividido em três etapas: Preparação do Teste, Execução do Teste e Registro do Teste (IEEE, 1998). Durante a etapa de preparação do teste é observado a fase de planejamento. Nesta fase da preparação do teste são definidas três dimensões que objetivam saber o tipo de teste a ser realizada, a técnica utilizada para efetua-lo e quando realiza-lo (SOUSA, 2009).
+
+
+Os Tipos de Teste representam o que deve ser testado no sistema, isto é, quais as características do software que serão testadas. Podem ser tanto necessidades funcionais quanto não funcionais. Já as Técnicas de Teste representam como o sistema deverá ser testado e subdivide-se em duas: Caixa Branca e Caixa Preta, a primeira se trata de uma técnica estrutural que leva em conta o código fonte do sistema, ou seja, o analista de teste tem acesso direto ao código, enquanto que a técnica de caixa preta se trata de um teste funcional, onde as verificações e validações são realizadas de acordo com os requisitos do sistema. Em Níveis de Teste é observado o momento no qual o sistema deverá ser testado. As atividades ocorrem em diferentes níveis do desenvolvimento e contém um teste especifico a ser executado (SOMMERVILLE, 2007). A Figura 1 apresenta as dimensões de teste encontradas
+
+//figura aqui
+
+Segundo Silva-de-Souza (2012), através da realização dos testes não é possível dizer que um software está livre de erros, isto é, um teste nunca provará a ausência de defeitos. Para Sousa (2009), defeitos estão ligado ao universo físico e são causados pela interpretação equivoca do desenvolvedor, enquanto que o erro é a manifestação do defeito desenvolvido e falha é o momento no qual o software tem comportamento diferente do esperado por causa de um erro gerado. Entretanto é importante mencionar que mesmo que um software esteja repleto de erros, este poderá nunca vir a apresentar uma falha. A Figura 2 mostra a relação entre Defeito, erro e falha.
+
+//figura aqui
+
+Outro aspecto importante a ser notado segundo Silva-de-Souza (2012) é a inviabilidade de se realizar testes exaustivos, isto é, testar todas as combinações e condições de entrada e saída esperadas. Para contornar esse problema são realizados alguns critérios de teste, onde os principais critérios são (SILVA-DE-SOUZA, 2012) e (TOMMY et al, 2015):
+
+i.	Particionamento em classes de equivalência: É possível reduzir o número de casos de teste , uma vez que esse critério divide os dados de entrada de uma unidade de software em duas classes, onde uma é composta por valores válidos e outra por valores inválidos. 
+
+
+ii.	Analise do valor Limite: Concentra-se em testes no limite das classes de equivalência, isto é, exploram as fronteiras entre as classes validas e inválidas utilizando valores que estão dentro ou fora dos limites especificados. 
+
+
+iii.	Grafo de causa-efeito: o teste começa criando um grafo que estabelece a relação entre o efeito(ações esperadas) e suas causas (dados de entrada). 
+
+
+iv.	Tabela de decisão: casos de teste são projetados para executar combinação de insumos ou causas, sendo mostrado em uma tabela de decisão. 
+
+
+\section{Regras de Negócio}
+
+
+As regras de negócio visam controlar os aspectos internos e externos à organização, no que diz respeito a maneira como os negócios são estruturados e operacionalizados (CUNHA, 2009). Segundo (ARAUJO, 2010), regras de negócio definem pré e pós condições as quais devem ser verdadeiras em determinadas situações. Desta maneira, as regras de negócio são parte fundamental do teste em software, tendo em vista que elas definem ou restringem algum ponto de vista do negócio seja no âmbito organizacional ou no âmbito dos Sistema da Informação (CUNHA, 2009). No lado dos Sistemas da Informação, segundo Cunha (2009) as regras de negócio são vistas como uma parte do requisito do sistema, de modo que seja possível projeta-las, implementa-las, testa-las e analisa-las; enquanto que no lado do negócio, as regras são vistas como diretivas responsáveis por conduzir ou influenciar o comportamento do próprio negócio a qual a organização está investindo.
+
+
+De acordo com Araújo (2010), a execução de um projeto de negócio está diretamente ligada às operações de criação, atualização, recuperação e exclusão dos objetos de negócio. Tais objetos podem ser considerados como instâncias de classes, sejam elas abstratas ou concretas. Dessa maneira, um diagrama de classes da UML pode ser entendido como uma representação dos objetos de negócio, das suas características, bem como suas possíveis restrições e de seus relacionamentos em um modelo independente de plataforma (ARAUJO, 2010). A Figura 3 exemplifica o metamodelo dos diagramas de classes da UML definido pela OMG (2005):
+
+//figura aqui
+
+Como as regras de negócio definem aspectos relacionados às operações CRUD, bem como suas pré e pós condições, é viável que casos de teste possam vir a serem gerados a partir dessas informações. No entanto é necessário que essas informações sejam expressas em linguagem computacional, como a Object Constraint Language (OCL) por exemplo (ARAUJO, 2010) e (SILVA-DE-SOUZA, 2012).
+
+\section{Object Constraint Language}
+
+A OCL (OMG, 2010) é uma linguagem textual de restrição de objetos definida pela OMG cujo objetivo é especificar restrições que não podem ser definidas graficamente em um modelo UML ou aderente ao padrão MOF (SILVA-DE-SOUZA, 2012). Desse modo, a OCL permite um complemento sobre os aspectos de diagramação da UML (ARAUJO, 2010), tais como especificar restrições, especificar pré e pós condições sobre as operações, condições de guarda e regras de derivação, tornar modelos mais condizentes com a realidade e servir como linguagem de consulta (SILVA-DE-SOUZA, 2012).
+
+De acordo com Araújo (2010), cada restrição está associada a um termo do negócio, de modo que suas sentenças estejam divididas em quarto partes: contexto, propriedade, operação e palavras reservadas. A Figura 4 mostra o metamodelo OCL definido pela OMG em 2003.
+
+//figura aqui
+
+
+Expressões OCL podem resultar em valores simples, objetos, tuplas, ou coleção de valores. Uma coleção pode ser de quarto tipos: Set (Não permite duplicidade dos elementos),
+
+OrderedSet(semelhante ao Set, porém apresenta ordenação dos elementos), Bag( permite duplicidade dos elementos, mas sem ordenação) e Sequence(semelhante ao Bag, porém com ordenação dos valores) (SILVA-DE-SOUZA, 2012).
+
+
+Através de um conjunto de instruções OCL é possível especificar restrições a respeito da estrutura e do comportamento de um sistema (SILVA-DE-SOUZA, 2012). Tais instruções baseiam primordialmente em contexto que contem invariantes e pré e pós-condições. A Figura 5 apresenta um exemplo simplificado de uma restrição OCL sobre a classe Empregado
+
+//figura aqui
+
+No exemplo acima temos uma classe empregado que possui nome e salário como atributos. A restrição de regra de negócio segundo o OCL expressado como comentário revela que uma instância da classe Empregado não pode ter salário menor do que zero. Além das restrições utilizando invariantes, a OCL como dito anteriormente, permite o uso de pré e pós-condições sobre determinada operação. A Figura 6 apresenta um exemplo simplificado de pré e pós-condições sobre uma operação.
+
+//figura aqui
+
+O uso da OCL no exemplo acima demonstra que para uma Empresa contratar um Empregado é necessário que antes de faça uma pré-condição, que é o fato de o empregado não estar empregado pela empresa, isto é, uma empresa não pode contratar um empregado que já está contratado. Em seguida o uso da palavra reservada post indica uma pós-condição, que garante que após a execução da operação contratar, a instância do empregado foi adicionada ao conjunto de empregados existentes.
+
+
+Ao permitir que as regras de negócio sejam expressas computacionalmente em um modelo independente de plataforma, a OCL juntamente com a UML possibilita que casos de teste sejam gerados automaticamente (SILVA-DE-SOUZA, 2012). Contudo, para que isso seja possível é necessário que haja uma abordagem que permita a transformação entre diferentes modelos. E é nesse contexto que surge a Model-Driven Architecture (MDA).
+
+\section{Trabalhos Relacionados}
+
+//trabalhos relacionados 
